@@ -11,6 +11,11 @@ export default defineNuxtConfig({
   },
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/supabase'],
   supabase: {
-    redirect: false,
+    redirect: true,
+    redirectOptions: {
+      include: ['/feed/'],
+      login: '/',
+      callback: '/feed/',
+    }
   }
 })
