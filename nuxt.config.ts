@@ -8,5 +8,6 @@ export default defineNuxtConfig({
       viewport: 'width=device-width, initial-scale=1',
       title: 'Eucalypt Social',
     }
-  }
+  },
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/supabase'],
 })
