@@ -7,10 +7,9 @@ export default defineNuxtConfig({
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
       title: 'Eucalypt Social',
-      bodyAttrs: { class: 'bg-whiteoff' },
     },
   },
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/supabase'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/supabase', '@nuxt/image'],
   supabase: {
     redirect: false,
     redirectOptions: {

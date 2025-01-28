@@ -10,10 +10,15 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/image": "^1.9.0",
     "@nuxtjs/supabase": "^1.4.6",
     "@nuxtjs/tailwindcss": "^6.13.1",
     "nuxt": "^3.15.3",
+    "showdown": "^2.1.0",
     "vue": "latest",
     "vue-router": "latest"
+  },
+  "devDependencies": {
+    "@types/showdown": "^2.0.6"
   }
 }
