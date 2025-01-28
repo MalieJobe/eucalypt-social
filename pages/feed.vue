@@ -13,11 +13,18 @@
    </div>
 </template>
 
-<script>
-export default {
-   data() {
-      return {
-         posts: [
+<script setup>
+const client = useSupabaseClient()
+const { data: postlist } = await useAsyncData('posts', async () => {
+   // RLS is disabled for posts
+  const { data } = await client.from('posts').select()
+
+  return data
+})
+console.log("posts:", postlist)
+
+
+const posts = [
             {
                id: 1,
                user: {
@@ -37,9 +44,6 @@ export default {
                content: 'Another example of a social media post.'
             }
          ]
-      };
-   }
-};
 </script>
 
 <style scoped>
