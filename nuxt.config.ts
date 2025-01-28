@@ -7,11 +7,12 @@ export default defineNuxtConfig({
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
       title: 'Eucalypt Social',
-    }
+      bodyAttrs: { class: 'bg-whiteoff' },
+    },
   },
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/supabase'],
   supabase: {
-    redirect: true,
+    redirect: false,
     redirectOptions: {
       include: ['/feed/'],
       login: '/',
