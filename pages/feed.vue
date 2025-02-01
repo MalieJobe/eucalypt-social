@@ -12,17 +12,24 @@
             </div>
             <button class="bg-blue-500 text-white font-semibold px-4 py-2 rounded-md">Post</button>
          </div>
+         <ClientOnly>
+            <QuillEditor ref="post-editor"
+               placeholder="What's on your mind?" theme="bubble"
+               :toolbar="[['bold', 'italic', 'link'], ['code-block'], ['image', 'video']]"
+               class="border border-solid" />
 
-         <!-- for futre: WYSIWYG editor for vue: -->
-         <!-- https://vueup.github.io/vue-quill/ -->
-         <textarea class="w-full h-24 p-2 mb-4 border border-gray-300 rounded-md"
-            placeholder="What's on your mind?"></textarea>
+         </ClientOnly>
       </div>
       <BasePost v-for="post in posts" :key="post.id" :post="post" />
    </div>
 </template>
 
 <script setup lang="ts">
+
+import { Delta, QuillEditor } from '@vueup/vue-quill'
+import '@vueup/vue-quill/dist/vue-quill.bubble.css';
+
+const postEditor = ref('post-editor');
 
 // const client = useSupabaseClient()
 // const { data: postlist } = await useAsyncData('posts', async () => {
